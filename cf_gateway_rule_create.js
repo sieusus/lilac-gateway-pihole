@@ -9,3 +9,4 @@ const wirefilterExpression = lists.reduce((previous, current) => {
 
 // Remove the trailing ' or '
 await createZeroTrustRule(wirefilterExpression.slice(0, -4));
+await createZeroTrustRuleHttp(wirefilterExpression.slice(0, -4));
