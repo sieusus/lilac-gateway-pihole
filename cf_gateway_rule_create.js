@@ -1,4 +1,4 @@
-import { createZeroTrustRule, getZeroTrustLists } from "./lib/api.js";
+import { createZeroTrustRule, createZeroTrustRuleHttp, getZeroTrustLists } from "./lib/api.js";
 
 const { result: lists } = await getZeroTrustLists();
 const wirefilterExpression = lists.reduce((previous, current) => {
