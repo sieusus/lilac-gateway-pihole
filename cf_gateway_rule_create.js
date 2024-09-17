@@ -1,4 +1,4 @@
-import { createZeroTrustRule, createZeroTrustRuleHttp, getZeroTrustLists } from "./lib/api.js";
+import { createZeroTrustRule, getZeroTrustLists } from "./lib/api.js";
 
 const { result: lists } = await getZeroTrustLists();
 const wirefilterExpression = lists.reduce((previous, current) => {
@@ -8,5 +8,4 @@ const wirefilterExpression = lists.reduce((previous, current) => {
 }, "");
 
 // Remove the trailing ' or '
-//await createZeroTrustRule(wirefilterExpression.slice(0, -4));
-await createZeroTrustRuleHttp(wirefilterExpression.slice(0, -4));
+await createZeroTrustRule(wirefilterExpression.slice(0, -4));
